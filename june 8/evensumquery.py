@@ -1,0 +1,12 @@
+n = int(input())
+a = list(map(int, input().split()))
+p = [0] * (n + 1)
+for i in range(1, n + 1):
+    if i % 2 == 0:
+        p[i] = p[i - 1] + a[i - 1]
+    else:
+        p[i] = p[i - 1]
+q = int(input())
+for i in range(q):
+    l, r = map(int, input().split())
+    print(p[r] - p[l - 1])
